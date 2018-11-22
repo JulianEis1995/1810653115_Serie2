@@ -1,6 +1,9 @@
 package Uebung2;
 
+import jdk.nashorn.internal.scripts.JO;
+
 import javax.swing.*;
+import java.awt.*;
 import java.util.Random;
 
 public class Zahlenraten
@@ -10,6 +13,8 @@ public class Zahlenraten
         // Festlegen von Variablen
         int min = 1;
         int max = 10;
+        // Vergleich zwischen int und String nicht möglich
+        int eingabe = Integer.parseInt(JOptionPane.showInputDialog("Bitte Zahl zwischen 1 und 10 eingeben"));
 
         /*
           Erzeugung eines neuen Objekts rnd der Klasse Random
@@ -25,6 +30,7 @@ public class Zahlenraten
         */
         int zufallszahl = rnd.nextInt(max - min +1) + min;
 
+        /*
         if (zufallszahl % 2 == 0)
         {
             JOptionPane.showMessageDialog(null, "Die Zahl ist gerade!");
@@ -33,6 +39,18 @@ public class Zahlenraten
         {
             JOptionPane.showMessageDialog(null, "Die Zahl ist ungerade!");
         }
-
+        */
+        if (zufallszahl == eingabe)
+        {
+            JOptionPane.showMessageDialog(null, "Die Eingabe ist korrekt");
+        }
+        else if (eingabe == zufallszahl + 2 || eingabe == zufallszahl +1 || eingabe == zufallszahl -1 || eingabe == zufallszahl -2)
+        {
+            JOptionPane.showMessageDialog(null, "Knapp dran");
+        }
+        else
+        {
+            JOptionPane.showMessageDialog(null, "Die Eingabe ist nicht korrekt");
+        }
     }
 }
