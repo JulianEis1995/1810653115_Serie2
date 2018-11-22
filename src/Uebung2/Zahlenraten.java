@@ -41,7 +41,7 @@ public class Zahlenraten
         }
         */
         int zahl;
-        for (zahl=0; zahl <4; zahl ++)
+        for (zahl=1; zahl <4; zahl ++)
         {
             int eingabe = Integer.parseInt(JOptionPane.showInputDialog("Bitte Zahl zwischen 1 und 10 eingeben"));
             if (zufallszahl == eingabe)
@@ -57,10 +57,6 @@ public class Zahlenraten
                 {
                 JOptionPane.showMessageDialog(null, "Die Eingabe ist nicht korrekt");
             }
-        }
-        if (zahl == 3)
-        {
-            JOptionPane.showMessageDialog(null, "Du hast die Zahl nicht erraten!");
         }
 
     }
