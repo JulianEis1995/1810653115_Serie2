@@ -14,7 +14,7 @@ public class Zahlenraten
         int min = 1;
         int max = 10;
         // Vergleich zwischen int und String nicht möglich
-        int eingabe = Integer.parseInt(JOptionPane.showInputDialog("Bitte Zahl zwischen 1 und 10 eingeben"));
+
 
         /*
           Erzeugung eines neuen Objekts rnd der Klasse Random
@@ -40,17 +40,28 @@ public class Zahlenraten
             JOptionPane.showMessageDialog(null, "Die Zahl ist ungerade!");
         }
         */
-        if (zufallszahl == eingabe)
+        int zahl;
+        for (zahl=0; zahl <4; zahl ++)
         {
-            JOptionPane.showMessageDialog(null, "Die Eingabe ist korrekt");
+            int eingabe = Integer.parseInt(JOptionPane.showInputDialog("Bitte Zahl zwischen 1 und 10 eingeben"));
+            if (zufallszahl == eingabe)
+            {
+                JOptionPane.showMessageDialog(null, "Die Eingabe ist korrekt");
+                break;
+            }
+            else if (eingabe == zufallszahl + 2 || eingabe == zufallszahl + 1 || eingabe == zufallszahl - 1 || eingabe == zufallszahl - 2)
+            {
+                JOptionPane.showMessageDialog(null, "Knapp dran");
+            }
+            else
+                {
+                JOptionPane.showMessageDialog(null, "Die Eingabe ist nicht korrekt");
+            }
         }
-        else if (eingabe == zufallszahl + 2 || eingabe == zufallszahl +1 || eingabe == zufallszahl -1 || eingabe == zufallszahl -2)
+        if (zahl == 3)
         {
-            JOptionPane.showMessageDialog(null, "Knapp dran");
+            JOptionPane.showMessageDialog(null, "Du hast die Zahl nicht erraten!");
         }
-        else
-        {
-            JOptionPane.showMessageDialog(null, "Die Eingabe ist nicht korrekt");
-        }
+
     }
 }
